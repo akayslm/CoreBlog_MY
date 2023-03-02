@@ -7,6 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddSession();
+
 builder.Services.AddMvc(config =>
     {
         var policy = new AuthorizationPolicyBuilder()
@@ -39,6 +41,8 @@ app.UseStatusCodePagesWithReExecute("/ErrorPage/Error1", "?code={0}");
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+
+app.UseSession();
 
 app.UseRouting();
 

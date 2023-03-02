@@ -13,6 +13,8 @@ namespace CoreDemo_MY.Controllers
             return View();
         }
 
+        [HttpPost]
+        [AllowAnonymous]
         public IActionResult Index(Writer p)
         {
             Context c = new Context();
@@ -20,8 +22,12 @@ namespace CoreDemo_MY.Controllers
             if (datavalue != null)
             {
                 HttpContext.Session.SetString("username", p.WriterMail);
-                return RedirectToAction("Index", "Blog");
+                return RedirectToAction("Index", "Writer");
             }
+            else
+	        {
+                return View();
+	        }
             return View();
         }
     }
