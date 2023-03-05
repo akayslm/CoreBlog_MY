@@ -18,6 +18,6 @@ namespace CoreDemo_MY.Controllers
             ViewBag.i = id;
             var values = bm.GetBlogByID(id);
             return View(values);
-        }
+        }         
     }
 }

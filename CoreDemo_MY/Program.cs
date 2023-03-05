@@ -42,7 +42,7 @@ app.UseStaticFiles();
 
 app.UseAuthentication();
 
-app.UseSession();
+//app.UseSession();
 
 app.UseRouting();
 
