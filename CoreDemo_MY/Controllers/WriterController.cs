@@ -17,5 +17,9 @@ namespace CoreDemo_MY.Controllers
         {
             return View();
         }
+        public IActionResult Test()
+        {
+            return View();
+        }
     }
 }
