@@ -1,6 +1,9 @@
 ﻿using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
 using DataAccessLayer.EF;
+using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace CoreDemo_MY.Controllers
 {
@@ -24,6 +27,32 @@ namespace CoreDemo_MY.Controllers
         {
             var values = bm.GetBlogListByWriter(1);
             return View(values);
+        }
+        [HttpGet]
+        public IActionResult BlogAdd()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult BlogAdd(Blog p)
+        {
+            //BlogValidator bv = new BlogValidator();
+            //ValidationResult results = bv.Validate(p);
+            //if (results.IsValid)
+            //{
+            //    p.BlogStatus = true;
+            //    p.BlogCreateDate = DateTime.Parse(DateTime.Now.ToShortDateString());
+                
+            //    return RedirectToAction("Index", "Blog");
+            //}
+            //else
+            //{
+            //    foreach (var item in results.Errors)
+            //    {
+            //        ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+            //    }
+            //}
+            return View();            
         }
     }
 }
